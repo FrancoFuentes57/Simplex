@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Método Simplex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script type="text/javascript" src="assets/js/Solver/simplex.js"></script>
+  <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <div class="contenedor">
+    <form name="theSpreadsheet">
+      <div class="cont-fila">
+        <h1 class="titulo">Programación Lineal</h1>
+        <h3>Método Simplex</h3>
+      </div>
+
+      <textarea id="franson" style="min-width: 100%;display: none;" class="form-control input-sm" name="input" rows=5
+        cols=80></textarea>
+
+      <div class="cont-fila">
+        <p>1. Selecciona si deseas maximizar o minimizar tu problema.</p>
+        <div class="flex">
+          <label>Objetivo: </label>
+          <select class="selectOption" id="maxOmin">
+            <option value="max">Maximizar</option>
+            <option value="min">Minimizar</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cont-fila">
+        <p>2. Define el número de variables en tu problema y la función objetivo.</p>
+        <div class="flex">
+          <label>Número de Variables: </label>
+          <select class="selectOption" id="numVariables" onchange="numeroDeVariables()">
+            <option value="select" selected disabled>Seleccionar</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <div id="funcObj" class="flexFunctions"></div>
+      </div>
+
+      <div class="cont-fila">
+        <p>3. Establece las restricciones del problema: </p>
+        <div class="flex-column">
+          <div>
+            <label for="">Numero de Restricciones: </label>
+            <select class="selectOption" id="numRestricciones" onchange="numeroDeRestricciones()">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div id="todasRestricciones" class="mt-simplex"></div>
+        </div>
+      </div>
+
+      <center style="display: none;">
+        Mode:
+        <select style="min-width: 80%" NAME="Mode" SIZE=3>
+
+          <OPTION>Decimal</OPTION>
+
+          <OPTION SELECTED>Fraction</OPTION>
+
+          <OPTION>Integer</OPTION>
+
+        </SELECT>
+
+      </center>
+
+      <center style="display: none;">
+        Rounding (significant digits): <input type=text size=2 value="6" name="acc">
+      </center>
+
+      <div id="areaTexto" class="primer">
+        <div class="cont-fila">
+          <p class="parrafo-sol">Solución: </p>
+          <input class="input-result" style="min-width: 100%; text-align:center;" type=text size=80 name="expr">
+        </div>
+
+        <textarea class="area-result" style="min-width: 100%; text-align: center;" name="output" rows=20
+          cols=30></textarea>
+      </div>
+      <div class="flex-boton" style="margin-bottom:1rem;">
+        <input type="button" class="boton" value="Obtener Solución" onClick="doIt(2); doIt(1)">
+        <input type="button" class="boton" value="Reiniciar" onClick="resetear()">
+      </div>
+    </form>
+
+  </div>
+
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap-386.js"></script>
+  <script src="assets/js/bootstrap-transition.js"></script>
+  <script src="assets/js/bootstrap-alert.js"></script>
+  <script src="assets/js/bootstrap-modal.js"></script>
+  <script src="assets/js/bootstrap-dropdown.js"></script>
+  <script src="assets/js/bootstrap-scrollspy.js"></script>
+  <script src="assets/js/bootstrap-tab.js"></script>
+  <script src="assets/js/bootstrap-tooltip.js"></script>
+  <script src="assets/js/bootstrap-popover.js"></script>
+  <script src="assets/js/bootstrap-button.js"></script>
+  <script src="assets/js/bootstrap-collapse.js"></script>
+  <script src="assets/js/bootstrap-carousel.js"></script>
+  <script src="assets/js/bootstrap-typeahead.js"></script>
+  <script src="assets/js/bootstrap-affix.js"></script>
+
+  <script src="assets/js/holder/holder.js"></script>
+  <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+  <script src="assets/js/application.js"></script>
+
+
+
+</body>
+
+</html>
